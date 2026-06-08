@@ -1,0 +1,45 @@
+\documentclass{beamer}
+
+\usepackage{media9}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% player (`VPlayer.swf`) and video resource (`eso50supernova.m4v`)
+% embedded in the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{embedded files}
+
+\includemedia[
+  width=0.9\linewidth,
+  totalheight=0.625\linewidth,
+  activate=pageopen,
+  passcontext,  %show VPlayer's right-click menu
+  addresource=./video/RW_2D_Animation.mov,
+  flashvars={
+    %important: same path as in `addresource'
+    source=./video/RW_2D_Animation.mov
+  }
+]{\fbox{Click!}}{VPlayer.swf}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% player (`VPlayer.swf`) and video resource (`eso50supernova.m4v`)
+% loaded from web urls during viewing time
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{remote files}
+
+\includemedia[
+  width=0.4\linewidth,
+  totalheight=0.225\linewidth,
+  activate=pageopen,
+  passcontext,  %show VPlayer's right-click menu
+  flashvars={
+    source=https://raw.githubusercontent.com/janniklasrose/latex-playground/main/media/RW_2D_Animation.mov
+  }
+]{\fbox{Click!}}{http://mirrors.ctan.org/macros/latex/contrib/media9/players/VPlayer.swf}
+
+\end{frame}
+
+\end{document}
