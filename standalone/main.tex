@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+% Somehow LaTeX doesn't load the sub-subpreambles, so we add it here
+\usepackage{tikz}
+
+\title{Nested Standalone Tikz}
+\author{Yours Truly}
+\date{2026-06-09}
+
+\begin{document}
+
+    \maketitle
+
+    \section{First section}
+    \import{section/}{section}
+
+\end{document}
