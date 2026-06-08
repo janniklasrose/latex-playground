@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage[margin=5pt]{geometry}
+
+\ifx\conditionmacro\undefined
+\gdef\conditionmacro{0}
+\immediate\write18{
+    pdflatex --jobname="main.doc1" "\gdef\string\conditionmacro{1}\string\input\space main"
+}
+\immediate\write18{
+    pdflatex --jobname="main.doc2" "\gdef\string\conditionmacro{2}\string\input\space main"
+}
+\fi
+
+\usepackage{pdfpages}
+
+\begin{document}
+    % Formatting
+    \centering\fontsize{40}{45}\bfseries
+
+    % Heading
+    JOBNAME = \jobname\par
+
+    % Embedding logic
+    \ifcase\conditionmacro\relax
+        % = 0
+        \fbox{\includegraphics[width=9cm]{main.doc1.pdf}}
+        \fbox{\includegraphics[width=9cm]{main.doc2.pdf}}
+    \or
+        % = 1
+        Condition is 1
+    \or
+        % = 2
+        Condition is 2
+    \fi
+    
+    % Debugging
+    \verb|\conditionmacro| is \texttt{\meaning\conditionmacro}
+
+\end{document}
