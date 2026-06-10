@@ -1,0 +1,39 @@
+\documentclass[a4paper]{report}
+
+% Page layout:
+\usepackage{geometry}
+\usepackage{fullpage}
+
+% References and shared formatting:
+\usepackage{graphicx}
+
+% Equations:
+\usepackage{amsmath}
+\usepackage{mathtools}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+% Figures:
+\usepackage{rotating}
+\usepackage{subcaption}
+\usepackage{tikz}
+
+% Tables:
+\usepackage{array}
+\usepackage{ltablex}
+\renewcommand{\arraystretch}{1.1}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\begin{document}
+
+\tableofcontents
+
+\include{example_Equations}
+\include{example_Figures}
+\include{example_Tables}
+
+\end{document}

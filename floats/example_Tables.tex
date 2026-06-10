@@ -1,0 +1,96 @@
+\chapter{Tables}
+\label{ch:tables}
+
+\section{Standard Tables}
+\label{sec:tables-standard}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Standard centered table.}
+	\label{tab:tables-standard}
+	\begin{tabular}{l c r}
+		\hline
+		\textbf{Left} & \textbf{Center} & \textbf{Right} \\
+		\hline
+		Alpha & 10 & 1.25 \\
+		Beta & 20 & 2.50 \\
+		Gamma & 30 & 3.75 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\caption{\texttt{tabularx} table with fixed and stretch columns.}
+	\label{tab:tables-tabularx}
+	\begin{tabularx}{\textwidth}{| l | c | r | L | C | R |}
+		\hline
+		\textbf{l} & \textbf{c} & \textbf{r} & \textbf{L} & \textbf{C} & \textbf{R} \\
+		\hline
+		left & center & right & ragged-left text & centered text & ragged-right text \\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\section{Long Tables}
+\label{sec:tables-long}
+
+\keepXColumns
+\begin{tabularx}{\textwidth}{| l | c | r | L |}
+	\caption{Long \texttt{tabularx} table with repeated headers and footers.}
+	\label{tab:tables-long}\\
+	\hline
+	\textbf{Item} & \textbf{Count} & \textbf{Value} & \textbf{Notes} \\
+	\hline
+	\endfirsthead
+
+	\multicolumn{4}{c}{\footnotesize --- continued from previous page --- } \\
+	\hline
+	\textbf{Item} & \textbf{Count} & \textbf{Value} & \textbf{Notes} \\
+	\hline
+	\endhead
+
+	\hline
+	\multicolumn{4}{c}{\footnotesize --- continued on next page --- } \\
+	\endfoot
+
+	\hline
+	\endlastfoot
+
+	Row 01 & 1 & 0.10 & Long-table content can flow across pages. \\
+	Row 02 & 2 & 0.20 & The header repeats after a page break. \\
+	Row 03 & 3 & 0.30 & The footer announces continuation. \\
+	Row 04 & 4 & 0.40 & Stretch columns absorb the available width. \\
+	Row 05 & 5 & 0.50 & Fixed columns keep compact values aligned. \\
+	Row 06 & 6 & 0.60 & Use this structure for appendices and data lists. \\
+	Row 07 & 7 & 0.70 & Long notes wrap inside the final column. \\
+	Row 08 & 8 & 0.80 & The layout remains full width. \\
+	Row 09 & 9 & 0.90 & Captions and labels live inside the table. \\
+	Row 10 & 10 & 1.00 & Repeated examples are intentionally varied. \\
+	Row 11 & 11 & 1.10 & This row keeps the table long enough to break. \\
+	Row 12 & 12 & 1.20 & This row keeps the table long enough to break. \\
+	Row 13 & 13 & 1.30 & This row keeps the table long enough to break. \\
+	Row 14 & 14 & 1.40 & This row keeps the table long enough to break. \\
+	Row 15 & 15 & 1.50 & This row keeps the table long enough to break. \\
+	Row 16 & 16 & 1.60 & This row keeps the table long enough to break. \\
+	Row 17 & 17 & 1.70 & This row keeps the table long enough to break. \\
+	Row 18 & 18 & 1.80 & This row keeps the table long enough to break. \\
+	Row 19 & 19 & 1.90 & This row keeps the table long enough to break. \\
+	Row 20 & 20 & 2.00 & This row keeps the table long enough to break. \\
+	Row 21 & 21 & 2.10 & This row keeps the table long enough to break. \\
+	Row 22 & 22 & 2.20 & This row keeps the table long enough to break. \\
+	Row 23 & 23 & 2.30 & This row keeps the table long enough to break. \\
+	Row 24 & 24 & 2.40 & This row keeps the table long enough to break. \\
+	Row 25 & 25 & 2.50 & This row keeps the table long enough to break. \\
+	Row 26 & 26 & 2.60 & This row keeps the table long enough to break. \\
+	Row 27 & 27 & 2.70 & This row keeps the table long enough to break. \\
+	Row 28 & 28 & 2.80 & This row keeps the table long enough to break. \\
+	Row 29 & 29 & 2.90 & This row keeps the table long enough to break. \\
+	Row 30 & 30 & 3.00 & This row keeps the table long enough to break. \\
+	Row 31 & 31 & 3.10 & This row keeps the table long enough to break. \\
+	Row 32 & 32 & 3.20 & This row keeps the table long enough to break. \\
+	Row 33 & 33 & 3.30 & This row keeps the table long enough to break. \\
+	Row 34 & 34 & 3.40 & This row keeps the table long enough to break. \\
+	Row 35 & 35 & 3.50 & This row keeps the table long enough to break. \\
+	Row 36 & 36 & 3.60 & This row keeps the table long enough to break. \\
+\end{tabularx}

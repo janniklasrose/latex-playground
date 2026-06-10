@@ -1,0 +1,106 @@
+\chapter{Equations}
+\label{ch:equations}
+
+\section{Single Equations}
+\label{sec:equations-single}
+
+\begin{equation}
+	\label{eq:equations-basic}
+	E = mc^2
+\end{equation}
+
+Use \texttt{split} inside \texttt{equation} for one numbered equation that spans
+multiple lines.
+
+\begin{equation}
+	\label{eq:equations-multiline}
+	\begin{split}
+		f(x) &= ax^2 + bx + c \\
+		     &= a(x-r_1)(x-r_2)
+	\end{split}
+\end{equation}
+
+Use \verb|\tag| when the printed equation identifier needs to be set manually.
+
+\begin{equation*}
+	\nabla \cdot \vect{u} = 0
+	\tag{continuity}
+	\label{eq:equations-continuity}
+\end{equation*}
+
+\section{Aligned Equations}
+\label{sec:equations-aligned}
+
+\begin{align}
+	\label{eq:equations-align-first}
+	a + b &= c \\
+	\label{eq:equations-align-second}
+	2a - b &= d
+\end{align}
+
+\begin{subequations}
+	\label{eq:equations-subequations}
+	\begin{align}
+		\label{eq:equations-subequations-a}
+		x_1 + x_2 &= 1 \\
+		\label{eq:equations-subequations-b}
+		x_1 - x_2 &= 0
+	\end{align}
+\end{subequations}
+
+\section{Matrices and Arrays}
+\label{sec:equations-matrices}
+
+\begin{equation*}
+	\begin{array}{rcl}
+		\text{left} & \longrightarrow & \text{right}
+	\end{array}
+	\tag{array}
+	\label{eq:equations-array}
+\end{equation*}
+
+\begin{equation}
+	\label{eq:equations-matrix-system}
+	\begin{bmatrix*}[r]
+		6.7861 & 2.2313 \\
+		2.2313 & 2.8148
+	\end{bmatrix*}
+	\vect{\ddot{u}}
+	+
+	\begin{bmatrix*}[r]
+		 0.9057 & -0.9057 \\
+		-0.9057 &  0.9057
+	\end{bmatrix*}
+	\vect{u}
+	=
+	\begin{pmatrix*}[r]
+		1 \\
+		10
+	\end{pmatrix*}
+\end{equation}
+
+\begin{equation}
+	\label{eq:equations-wide-matrix}
+	\underline{A} =
+	\resizebox{.90\hsize}{!}{$
+	\begin{bmatrix*}[c]
+		-4+B^S+B^W & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+		1 & -4+B^S & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+		0 & 1 & -4+B^S+B^E & 0 & 0 & 1 & 0 & 0 & 0 \\
+		1 & 0 & 0 & -4+B^W & 1 & 0 & 1 & 0 & 0 \\
+		0 & 1 & 0 & 1 & -4 & 1 & 0 & 1 & 0 \\
+		0 & 0 & 1 & 0 & 1 & -4+B^E & 0 & 0 & 1 \\
+		0 & 0 & 0 & 1 & 0 & 0 & -4+B^N+B^W & 1 & 0 \\
+		0 & 0 & 0 & 0 & 1 & 0 & 1 & -4+B^N & 1 \\
+		0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & -4+B^N+B^E
+	\end{bmatrix*}
+	$}
+\end{equation}
+
+\section{Displayed Text}
+\label{sec:equations-displayed-text}
+
+\begin{quote}
+	\centering
+	Displayed text can be set apart with a \texttt{quote} environment.
+\end{quote}
