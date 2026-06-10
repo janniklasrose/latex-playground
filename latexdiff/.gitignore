@@ -1,0 +1,7 @@
+*.tex
+*.bbl
+*.pdf
+!old.tex
+!old.bbl
+!new.tex
+!new.bbl

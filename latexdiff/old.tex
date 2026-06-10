@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=teal]{hyperref}
+
+\title{A Small Study of Reproducible Typesetting}
+\author{Ada Example}
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note demonstrates a compact LaTeX workflow for comparing manuscript
+versions.  The old version argues that reproducible typesetting is mainly a
+matter of keeping source files in one directory and compiling them in a stable
+order.
+\end{abstract}
+
+\section{Motivation}
+
+Scientific documents often combine prose, figures, and bibliographic records.
+When these ingredients are revised independently, reviewers need a clear view
+of what changed.  Tools such as \texttt{latexdiff} are useful because they mark
+insertions and deletions directly in the compiled document.
+
+The baseline workflow in this example is intentionally simple.  Authors edit a
+single \texttt{.tex} file, keep a generated \texttt{.bbl} file next to it, and
+compile the document with \texttt{latexmk}.  Classic references on literate
+typesetting and LaTeX practice motivate this approach \cite{knuth1984,lamport1994}.
+
+\section{Method}
+
+The document is built from deterministic inputs.  The bibliography is stored as
+a checked-in \texttt{.bbl} file so that the example does not require running
+BibTeX or Biber.  This makes the comparison portable across small test
+environments.
+
+\section{Conclusion}
+
+The old workflow is adequate for short examples, but it leaves room for a more
+explicit build rule that treats the bibliography as a first-class dependency.
+
+\input{\jobname.bbl}
+
+\end{document}

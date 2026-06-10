@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=teal]{hyperref}
+
+\title{A Small Study of Reproducible Typesetting}
+\author{Ada Example and Ben Reviewer}
+\date{June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note demonstrates a compact LaTeX workflow for comparing manuscript
+versions. The revised version argues that reproducible typesetting depends on
+declaring source files, generated bibliographies, and comparison artifacts as
+explicit build dependencies.
+\end{abstract}
+
+\section{Motivation}
+
+Scientific documents often combine prose, figures, tables, and bibliographic
+records. When these ingredients are revised independently, reviewers need a
+clear view of what changed. Tools such as \texttt{latexdiff} are useful because
+they mark insertions and deletions directly in the compiled document.
+
+The baseline workflow in this example is intentionally simple. Authors edit a
+single \texttt{.tex} file, keep a generated \texttt{.bbl} file next to it, and
+compile the document with \texttt{latexmk}. Classic references on literate
+typesetting, LaTeX practice, and package maintenance motivate this approach
+\cite{knuth1984,lamport1994,mittelbach2004}.
+
+\section{Method}
+
+The document is built from deterministic inputs. The bibliography is stored as
+a checked-in \texttt{.bbl} file so that the example does not require running
+BibTeX or Biber. This makes the comparison portable across small test
+environments and keeps the diff focused on document content rather than tool
+availability.
+
+\section{Build rule}
+
+The Makefile treats each logical document name as a target. For example,
+\texttt{make old}, \texttt{make new}, and \texttt{make diff} all compile a
+matching \texttt{.tex} file and count the same source with \texttt{texcount}.
+The diff target first generates both \texttt{diff.tex} and \texttt{diff.bbl}.
+
+\section{Conclusion}
+
+The revised workflow is still small, but it makes the bibliography dependency
+visible. That is the key detail needed for a reliable comparison target.
+
+\input{\jobname.bbl}
+
+\end{document}
