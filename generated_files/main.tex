@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\title{Generated Files Example}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Generated plot}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\linewidth]{generated/plot.png}
+  \caption{A PNG generated from \texttt{src/plot.py}.}
+\end{figure}
+
+\section*{Generated table}
+
+\begin{center}
+  \input{generated/tabular.tex}
+\end{center}
+
+\end{document}
